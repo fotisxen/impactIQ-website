@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f7f5;
+  --background-raised: #ffffff;
+  --foreground: #0b0d0f;
+  --foreground-muted: #52565c;
+  --border: #e2e2df;
+  --border-strong: #cacac6;
+
+  --accent-amber: #e8792a;
+  --accent-amber-strong: #c9611a;
+  --accent-cyan: #0f8a8a;
+  --accent-cyan-strong: #0c6e6e;
+
+  --surface-inverted: #0b0d0f;
+  --foreground-inverted: #f7f7f5;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-raised: var(--background-raised);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-amber-strong: var(--accent-amber-strong);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-cyan-strong: var(--accent-cyan-strong);
+
+  --color-surface-inverted: var(--surface-inverted);
+  --color-foreground-inverted: var(--foreground-inverted);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #08090b;
+    --background-raised: #101215;
+    --foreground: #f2f3f1;
+    --foreground-muted: #9a9d9f;
+    --border: #202226;
+    --border-strong: #34363a;
+
+    --accent-amber: #f2934a;
+    --accent-amber-strong: #ff9d4d;
+    --accent-cyan: #3ecfcf;
+    --accent-cyan-strong: #5be0e0;
+
+    --surface-inverted: #f2f3f1;
+    --foreground-inverted: #08090b;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
