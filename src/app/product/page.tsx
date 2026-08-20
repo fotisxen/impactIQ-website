@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Layers } from "lucide-react";
+import { Layers, ListChecks } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { TwoWaysIn } from "@/components/sections/TwoWaysIn";
 import { AdvancedStats } from "@/components/sections/AdvancedStats";
@@ -44,18 +44,41 @@ export default function ProductPage() {
       <DataFlowWalkthrough />
 
       <Section>
-        <div className="flex flex-col gap-5 rounded-xl border border-border bg-background-raised p-7 sm:flex-row sm:items-start">
-          <Layers className="h-7 w-7 shrink-0 text-accent-amber" strokeWidth={1.5} />
-          <div>
-            <h3 className="text-lg font-semibold text-foreground">
-              Multi-competition support
-            </h3>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground-muted">
-              The same team or player can play across multiple leagues and
-              cups in one season — a domestic league, a national cup, and a
-              continental competition. Stats are correctly isolated per
-              competition, and also viewable combined across all of them.
-            </p>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="flex flex-col gap-5 rounded-xl border border-border bg-background-raised p-7 sm:flex-row sm:items-start">
+            <Layers className="h-7 w-7 shrink-0 text-accent-amber" strokeWidth={1.5} />
+            <div>
+              <h3 className="text-lg font-semibold text-foreground">
+                Multi-competition support
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
+                The same team or player can play across multiple leagues and
+                cups in one season — domestic league, national cup, and
+                continental competition — including the Greek Cup, Copa del
+                Rey, Coppa Italia, Turkish Cup, Coupe de France, BBL-Pokal,
+                LKL Cup, and Israeli State Cup. Stats are correctly isolated
+                per competition, and also viewable combined across all of them.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-5 rounded-xl border border-border bg-background-raised p-7 sm:flex-row sm:items-start">
+            <ListChecks className="h-7 w-7 shrink-0 text-accent-cyan" strokeWidth={1.5} />
+            <div>
+              <h3 className="text-lg font-semibold text-foreground">
+                Primary, context, and strategic — the honest way
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
+                The Four Factors breakdown for any team is organized in three
+                tiers: Primary (what actually happened — ORtg, DRtg, Net
+                Rating, eFG%, TOV%, ORB%, FTr), Context (pace, opponent
+                quality, lineup combinations from play-by-play data), and
+                Strategic (why it happened). The Strategic tier is shown as
+                an explicit N/A with the reason — it needs film and tracking
+                data no box-score-based tool can produce, and we&apos;d
+                rather say so than fake it.
+              </p>
+            </div>
           </div>
         </div>
       </Section>

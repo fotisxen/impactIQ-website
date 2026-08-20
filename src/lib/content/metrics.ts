@@ -23,17 +23,17 @@ export const CORE_METRICS: Metric[] = [
   {
     code: "IS",
     name: "Impact Score",
-    description: "A from-scratch composite built specifically for Impact IQ's data.",
+    description: "A from-scratch, BPM-style composite built specifically for Impact IQ's data.",
   },
   {
     code: "DOE",
     name: "Four Factors + Ratings",
-    description: "Dean Oliver's Four Factors plus offensive and defensive rating.",
+    description: "Dean Oliver's Four Factors, weighted, plus offensive and defensive rating.",
   },
   {
     code: "NET",
     name: "Net Rating",
-    description: "ORtg minus DRtg — for players, built from real +/- when play-by-play exists.",
+    description: "Exact ORtg minus DRtg — for players, built from real +/- when play-by-play exists.",
   },
   {
     code: "USG%",
@@ -47,3 +47,38 @@ export const CORE_METRICS: Metric[] = [
   },
 ];
 
+export type MetricCategory = {
+  name: string;
+  metrics: string[];
+};
+
+// The full taxonomy beyond the headline eight — every one derived and
+// documented, not a token handful. Shown as a supporting strip, not
+// individually explained, since there are simply too many to caption.
+export const METRIC_CATEGORIES: MetricCategory[] = [
+  {
+    name: "Scoring",
+    metrics: ["PPFT", "PP2PS", "PP3PS", "PTS/Shot", "PTS/Poss", "PTS/100 Poss"],
+  },
+  {
+    name: "Shooting",
+    metrics: ["TS%", "eFG%", "FT Rate", "3PA Rate"],
+  },
+  {
+    name: "Rebounding",
+    metrics: ["OREB%", "DREB%", "TRB%"],
+  },
+  {
+    name: "Ball handling",
+    metrics: ["AST%", "STL%", "BLK%", "TOV%", "AST/TOV", "STL/TOV"],
+  },
+];
+
+export const FOUR_FACTORS_WEIGHTS = [
+  { name: "Shooting", weight: 40 },
+  { name: "Ball handling", weight: 25 },
+  { name: "Rebounding", weight: 20 },
+  { name: "FT rate", weight: 15 },
+];
+
+export const IMPACT_RATING_CONFIDENCE_LEVELS = ["Very Low", "Low", "Medium", "High"];

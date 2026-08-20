@@ -6,6 +6,7 @@ import { AdvancedStats } from "@/components/sections/AdvancedStats";
 import { Insights } from "@/components/sections/Insights";
 import { ChartsShowcase } from "@/components/sections/ChartsShowcase";
 import { ArenaWalkthrough } from "@/components/interactive/ArenaWalkthrough";
+import { StickyContactBar } from "@/components/layout/StickyContactBar";
 import { Platforms } from "@/components/sections/Platforms";
 import { PricingTable } from "@/components/sections/PricingTable";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
@@ -48,6 +49,10 @@ export default function Home() {
       </Section>
 
       <CtaBanner />
+
+      {/* spacer so the fixed contact bar doesn't sit directly on top of the footer */}
+      <div className="h-16 sm:h-14" aria-hidden />
+      <StickyContactBar />
     </>
   );
 }

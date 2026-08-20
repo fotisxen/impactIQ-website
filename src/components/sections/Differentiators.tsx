@@ -18,7 +18,7 @@ const ITEMS = [
     icon: Gauge,
     name: "RAPM-style Impact Rating",
     description:
-      "Built from scratch with the same technique behind modern industry metrics like LEBRON and EPM.",
+      "Built from scratch with the same technique behind modern industry metrics like LEBRON and EPM — with a visible confidence level, not a black-box number.",
   },
   {
     icon: ClipboardList,

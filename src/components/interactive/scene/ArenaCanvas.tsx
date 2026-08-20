@@ -233,9 +233,23 @@ function Court() {
         <boxGeometry args={[KEY_WIDTH, 0.05, KEY_LENGTH]} />
         <meshStandardMaterial color={PAINT} roughness={0.65} />
       </mesh>
-      <mesh position={[0, 0.05, KEY_CENTER_Z]} castShadow receiveShadow>
-        <boxGeometry args={[KEY_WIDTH + 0.3, 0.03, KEY_LENGTH + 0.3]} />
-        <meshStandardMaterial color={LINE} roughness={0.5} wireframe />
+
+      {/* key outline: left + right sides and the free-throw-line edge.
+          The baseline edge is already drawn by the baseline line mesh above.
+          Built from thin boxes, not a wireframe box — a wireframe BoxGeometry
+          draws its faces' triangle diagonals too, which showed up as a stray
+          line/triangle cutting across the paint. */}
+      <mesh position={[-KEY_WIDTH / 2, 0.05, KEY_CENTER_Z]} castShadow receiveShadow>
+        <boxGeometry args={[0.08, 0.03, KEY_LENGTH]} />
+        <meshStandardMaterial color={LINE} roughness={0.5} />
+      </mesh>
+      <mesh position={[KEY_WIDTH / 2, 0.05, KEY_CENTER_Z]} castShadow receiveShadow>
+        <boxGeometry args={[0.08, 0.03, KEY_LENGTH]} />
+        <meshStandardMaterial color={LINE} roughness={0.5} />
+      </mesh>
+      <mesh position={[0, 0.05, FT_LINE_Z]} castShadow receiveShadow>
+        <boxGeometry args={[KEY_WIDTH, 0.03, 0.08]} />
+        <meshStandardMaterial color={LINE} roughness={0.5} />
       </mesh>
 
       {/* free-throw circle, centered on the free-throw line at the key's far edge */}

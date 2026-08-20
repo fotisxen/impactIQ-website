@@ -12,7 +12,7 @@ const CHARTS = [
   {
     Icon: RadarChartIcon,
     name: "Opta-style radar",
-    use: "The Four Factors' shape — shooting, turnovers, rebounding, free throws at a glance.",
+    use: "A player's percentile profile against the league, across every key stat category.",
   },
   {
     Icon: ShotChartIcon,

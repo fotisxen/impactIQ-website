@@ -22,7 +22,12 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Can I track a team across multiple competitions in one season?",
     answer:
-      "Yes. A team playing its domestic league, a national cup, and a continental competition in the same season has each competition's stats correctly isolated, and you can also view them combined across all competitions.",
+      "Yes. A team playing its domestic league, a national cup — Greek Cup, Copa del Rey, Coppa Italia, Turkish Cup, Coupe de France, BBL-Pokal, LKL Cup, Israeli State Cup, and more — and a continental competition in the same season has each competition's stats correctly isolated, and you can also view them combined across all competitions.",
+  },
+  {
+    question: "How confident should I be in the Impact Rating?",
+    answer:
+      "It ships with a visible confidence level — Very Low, Low, Medium, or High — based on how many play-by-play games actually back the number for that player or team. A thin sample is never presented as a settled rating. We'd also rather show one honest Impact Rating than two arbitrarily-different \"LEBRON\" and \"EPM\" numbers borrowed from formulas we can't fully reproduce — the proprietary tracking data that actually differentiates those commercial models isn't something we have, and we're not going to pretend otherwise.",
   },
   {
     question: "Is there an iOS or Android app?",
@@ -42,7 +47,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Can I export my data?",
     answer:
-      "Yes — full Excel export, plus shareable branded PNG report cards for a single game or a player/team's full season, ready to send to a coach or post.",
+      "Yes — full Excel export, shareable branded PNG report cards for a single game or a player/team's full season, and a coach-facing advanced report (Excel and PDF) that ranks the full roster on every advanced metric, best to worst, as of any point in the season you choose — not just a full-season summary.",
   },
   {
     question: "Do you offer plans for leagues, federations, or large clubs?",

@@ -5,10 +5,16 @@ export const SITE_URL = (
 ).replace(/\/$/, "");
 
 // Placeholder — swap for a real inbox before launch.
-export const CONTACT_EMAIL = "hello@impactiq.app";
+export const CONTACT_EMAIL = "info@opensite.gr";
 
 // Placeholder — swap for the real installer URL once one exists.
 export const DESKTOP_DOWNLOAD_URL = `${SITE_URL}/platforms#desktop`;
+
+// Placeholder — this is a mailto, not a live calendar booking widget. Swap
+// for a real scheduling link (Calendly, Cal.com, etc.) once one exists.
+export const SCHEDULE_CALL_URL = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+  "Schedule a call with Impact IQ"
+)}`;
 
 export const SITE_TAGLINE =
   "Basketball analytics nobody else provides.";
@@ -26,6 +32,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "/pricing", label: "Pricing" },
   { href: "/platforms", label: "Platforms" },
   { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
@@ -44,6 +51,7 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
       { href: "/pricing", label: "Pricing" },
       { href: "/platforms", label: "Platforms" },
       { href: "/faq", label: "FAQ" },
+      { href: "/contact", label: "Contact" },
     ],
   },
 ];

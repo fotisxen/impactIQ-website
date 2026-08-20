@@ -27,7 +27,7 @@ export const CORE_PLANS: PricingPlan[] = [
       "PIR, PER, PIE, Impact Score, DOE, Net Rating",
       "Photo upload and play-by-play import",
       "6 purpose-built chart types",
-      "Season leaderboards and Excel export",
+      "Leaderboards, Excel/PDF exports, and point-in-season advanced reports",
       "Shareable branded report cards",
     ],
     cta: "Get started",

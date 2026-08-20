@@ -10,7 +10,7 @@ const PHOTO_POINTS = [
 const PBP_POINTS = [
   "Import a EuroLeague-style play-by-play Excel export",
   "Parsed locally — zero API cost, unlimited on any plan",
-  "Exact free-throw splits, exact shot types, fouls drawn",
+  "Exact free-throw splits, exact shot types, fouls drawn, shots rejected",
   "Real, measured minutes and plus/minus, reconstructed from substitution timestamps and score deltas",
 ];
 
@@ -68,6 +68,16 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
           ) : null}
         </div>
       </div>
+
+      {full ? (
+        <p className="mt-6 text-sm text-foreground-muted">
+          Manual entry is always there too, as a baseline. The principle
+          holds across all three: the more data you give Impact IQ, the
+          deeper it can go — a manually-typed line gets the standard box
+          score and headline metrics, and play-by-play is what unlocks real
+          plus/minus and the Impact Rating.
+        </p>
+      ) : null}
     </Section>
   );
 }
