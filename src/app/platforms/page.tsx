@@ -6,11 +6,11 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 export const metadata: Metadata = {
   title: "Platforms",
   description:
-    "Impact IQ is available today as a Windows desktop app. iOS and Android are on the way — scan the QR code for early access.",
+    "Impact IQ is available today as a Windows and macOS desktop app. iOS and Android are on the way — scan the QR code for early access.",
   alternates: { canonical: "/platforms" },
   openGraph: {
     title: "Platforms | Impact IQ",
-    description: "Available today on Windows desktop. iOS and Android are on the way.",
+    description: "Available today on Windows and macOS desktop. iOS and Android are on the way.",
   },
 };
 
@@ -34,7 +34,7 @@ export default function PlatformsPage() {
 
       <CtaBanner
         title="Ready on desktop right now."
-        description="Get the full analytics engine today on Windows — mobile will carry the same standard when it ships."
+        description="Get the full analytics engine today on Windows or macOS — mobile will carry the same standard when it ships."
       />
     </>
   );

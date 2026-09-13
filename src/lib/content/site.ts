@@ -7,9 +7,6 @@ export const SITE_URL = (
 // Placeholder — swap for a real inbox before launch.
 export const CONTACT_EMAIL = "info@opensite.gr";
 
-// Placeholder — swap for the real installer URL once one exists.
-export const DESKTOP_DOWNLOAD_URL = `${SITE_URL}/platforms#desktop`;
-
 // Placeholder — this is a mailto, not a live calendar booking widget. Swap
 // for a real scheduling link (Calendly, Cal.com, etc.) once one exists.
 export const SCHEDULE_CALL_URL = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(

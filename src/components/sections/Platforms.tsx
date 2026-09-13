@@ -1,11 +1,16 @@
-import { Monitor, Smartphone } from "lucide-react";
+import { Monitor, Smartphone, Apple } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { WaitlistForm } from "./WaitlistForm";
 import { DownloadQr } from "./DownloadQr";
-import { SITE_URL, DESKTOP_DOWNLOAD_URL } from "@/lib/content/site";
+import { SITE_URL } from "@/lib/content/site";
+import { getLatestRelease } from "@/lib/releases";
 
-export function Platforms({ full = false }: { full?: boolean }) {
+export async function Platforms({ full = false }: { full?: boolean }) {
+  const release = await getLatestRelease();
+  const hasAnyBuild = !!(release?.windows || release?.mac);
+  const desktopPageUrl = `${SITE_URL}/platforms#desktop`;
+
   return (
     <Section id="platforms">
       <SectionHeading
@@ -19,29 +24,52 @@ export function Platforms({ full = false }: { full?: boolean }) {
           <div className="flex items-center gap-3">
             <Monitor className="h-7 w-7 text-accent-amber" strokeWidth={1.5} />
             <span className="rounded-full border border-accent-amber/40 bg-accent-amber/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-accent-amber">
-              Available now
+              {hasAnyBuild ? `Available now · ${release?.version}` : "Coming very soon"}
             </span>
           </div>
           <h3 className="mt-4 text-xl font-semibold text-foreground">Desktop</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
-            Built and shipping today for Windows. The full analytics engine —
-            photo upload, play-by-play import, every advanced stat, chart, and
-            scouting insight — runs here.
+            Built and shipping today for Windows and macOS. The full analytics
+            engine — photo upload, play-by-play import, every advanced stat,
+            chart, and scouting insight — runs here.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Button href={DESKTOP_DOWNLOAD_URL} variant="primary">
-              Download for Windows
-            </Button>
+            {release?.windows ? (
+              <Button href={release.windows.url} variant="primary">
+                Download for Windows ({release.windows.sizeMb} MB)
+              </Button>
+            ) : (
+              <Button href={desktopPageUrl} variant="primary" disabled>
+                Download for Windows
+              </Button>
+            )}
+            {release?.mac ? (
+              <Button href={release.mac.url} variant="secondary">
+                <Apple className="mr-1.5 -mt-0.5 inline h-4 w-4" strokeWidth={1.5} />
+                Download for macOS ({release.mac.sizeMb} MB)
+              </Button>
+            ) : (
+              <Button href={desktopPageUrl} variant="secondary" disabled>
+                <Apple className="mr-1.5 -mt-0.5 inline h-4 w-4" strokeWidth={1.5} />
+                Download for macOS
+              </Button>
+            )}
             {full ? (
               <Button href="/pricing" variant="secondary">
                 See pricing
               </Button>
             ) : null}
           </div>
+          {!hasAnyBuild ? (
+            <p className="mt-3 text-xs text-foreground-muted">
+              The installer is being finalized — check back shortly, or use the
+              contact page to ask for early access.
+            </p>
+          ) : null}
           <div className="mt-6 border-t border-border pt-6">
             <DownloadQr
-              url={DESKTOP_DOWNLOAD_URL}
-              caption="Scan to grab the download link on your computer."
+              url={desktopPageUrl}
+              caption="Scan to open this page on your computer and pick your OS."
             />
           </div>
         </div>

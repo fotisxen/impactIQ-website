@@ -32,7 +32,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Is there an iOS or Android app?",
     answer:
-      "Impact IQ is available today as a Windows desktop app, with iOS and Android on the way. Scan the QR code on the Platforms page for early access and we'll notify you the moment mobile is live.",
+      "Impact IQ is available today as a Windows and macOS desktop app, with iOS and Android on the way. Scan the QR code on the Platforms page for early access and we'll notify you the moment mobile is live.",
   },
   {
     question: "What happens to my data if I join a team account?",

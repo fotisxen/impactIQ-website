@@ -16,14 +16,26 @@ export function Button({
   children,
   variant = "primary",
   className = "",
+  disabled = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: ButtonVariant;
   className?: string;
+  disabled?: boolean;
 }) {
   const isExternal = href.startsWith("http") || href.startsWith("mailto:");
-  const classes = `inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-colors ${VARIANT_CLASSES[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-colors ${VARIANT_CLASSES[variant]} ${className} ${
+    disabled ? "pointer-events-none opacity-50" : ""
+  }`;
+
+  if (disabled) {
+    return (
+      <span className={classes} aria-disabled="true">
+        {children}
+      </span>
+    );
+  }
 
   if (isExternal) {
     return (

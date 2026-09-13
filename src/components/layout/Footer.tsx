@@ -45,7 +45,7 @@ export function Footer() {
 
       <Container className="flex flex-col gap-2 border-t border-border py-6 text-xs text-foreground-muted sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © {year} {SITE_NAME}. Desktop app available now for Windows.
+          © {year} {SITE_NAME}. Desktop app available now for Windows and macOS.
         </p>
         <p>Analysis nobody else in basketball provides.</p>
       </Container>
