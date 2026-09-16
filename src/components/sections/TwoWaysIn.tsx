@@ -9,7 +9,7 @@ const PHOTO_POINTS = [
 
 const PBP_POINTS = [
   "Import a EuroLeague-style play-by-play Excel export",
-  "Parsed locally — zero API cost, unlimited on any plan",
+  "Parsed locally — zero API cost, unlimited on the Photo plan",
   "Exact free-throw splits, exact shot types, fouls drawn, shots rejected",
   "Real, measured minutes and plus/minus, reconstructed from substitution timestamps and score deltas",
 ];
@@ -28,7 +28,7 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
           <Camera className="h-7 w-7 text-accent-amber" strokeWidth={1.5} />
           <h3 className="mt-4 text-xl font-semibold text-foreground">Photo upload</h3>
           <p className="mt-1 text-sm text-foreground-muted">
-            The easy, metered path — powered by AI for the part AI is actually good at.
+            The easy, AI-powered path — unlimited on the Photo plan.
           </p>
           <ul className="mt-5 flex flex-col gap-3">
             {PHOTO_POINTS.map((point) => (

@@ -17,7 +17,7 @@ export const SITE_TAGLINE =
   "Basketball analytics nobody else provides.";
 
 export const SITE_DESCRIPTION =
-  "Impact IQ turns box scores and play-by-play exports into analysis nobody else in basketball offers — AI-powered capture, real plus/minus, PIR, PER, PIE, and a from-scratch RAPM impact rating.";
+  "Impact IQ turns box scores and play-by-play exports into two things nobody else in basketball offers at this depth — advanced stats for evaluating players (real plus/minus, PIR, PER, PIE, a from-scratch RAPM Impact Rating) and high-quality scouting reports for preparing games.";
 
 export type NavLink = {
   href: string;

@@ -60,7 +60,7 @@ const jsonLd = {
       offers: CORE_PLANS.map((plan) => ({
         "@type": "Offer",
         name: plan.name,
-        price: plan.priceMonthly,
+        price: plan.priceYearly,
         priceCurrency: "EUR",
         description: plan.tagline,
       })),

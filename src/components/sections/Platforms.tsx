@@ -16,7 +16,7 @@ export async function Platforms({ full = false }: { full?: boolean }) {
       <SectionHeading
         eyebrow="Platforms"
         title="Get Impact IQ."
-        description="Desktop is live today. iOS and Android are on the way — scan below for early access."
+        description="Desktop runs the full analytics engine, live today. A real player companion app is in testing — scan below to join."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -78,18 +78,21 @@ export async function Platforms({ full = false }: { full?: boolean }) {
           <div className="flex items-center gap-3">
             <Smartphone className="h-7 w-7 text-accent-cyan" strokeWidth={1.5} />
             <span className="rounded-full border border-accent-cyan/40 bg-accent-cyan/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-accent-cyan">
-              Early access
+              In testing
             </span>
           </div>
-          <h3 className="mt-4 text-xl font-semibold text-foreground">iOS &amp; Android</h3>
+          <h3 className="mt-4 text-xl font-semibold text-foreground">Player companion app</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
-            On the way, carrying the same analytics engine as desktop. Scan in
-            or sign up below and we&apos;ll notify you the moment it&apos;s live.
+            Real and working — but a different, narrower app than desktop,
+            built for players: it shows exactly your team&apos;s current
+            scouting report, published by your coach, and nothing else. No
+            dashboard, no data entry. Currently in TestFlight (iOS) and Play
+            Store internal testing (Android), not a public store listing yet.
           </p>
           <div className="mt-6 border-t border-border pt-6">
             <DownloadQr
               url={`${SITE_URL}/platforms#waitlist`}
-              caption="Scan to join early access from your phone."
+              caption="Scan to join the tester list from your phone."
             />
           </div>
           <div id="waitlist" className="mt-6 scroll-mt-24">

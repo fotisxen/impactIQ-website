@@ -19,7 +19,7 @@ export function WaitlistForm() {
     return (
       <div className="flex items-center gap-2.5 rounded-md border border-accent-cyan/40 bg-accent-cyan/10 px-4 py-3 text-sm text-accent-cyan">
         <CheckCircle2 className="h-4 w-4 shrink-0" />
-        You&apos;re on the list — we&apos;ll email you the moment mobile ships.
+        You&apos;re on the list — we&apos;ll email you once you&apos;re added as a tester.
       </div>
     );
   }
@@ -42,7 +42,7 @@ export function WaitlistForm() {
         type="submit"
         className="inline-flex items-center justify-center gap-2 rounded-md bg-accent-amber px-5 py-3 text-sm font-medium text-surface-inverted transition-colors hover:bg-accent-amber-strong"
       >
-        Notify me
+        Join tester list
         <Send className="h-4 w-4" />
       </button>
     </form>

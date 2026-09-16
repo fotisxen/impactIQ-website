@@ -8,17 +8,19 @@ import { FAQ_ITEMS } from "@/lib/content/faq";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Impact IQ pricing: Individual and Team base plans, plus a separately-billed photo-upload add-on since every scan costs real API money. Play-by-play import is free and unlimited.",
+    "Impact IQ pricing: Manual (€200/year) and Photo (€500/year) self-serve plans, plus a fully read-only Pro tier (€4,000/year) for leagues and federations. Annual, organization-wide, no per-seat billing.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Pricing | Impact IQ",
     description:
-      "Individual and Team base plans, plus a metered photo-upload add-on. Play-by-play import is free and unlimited on every plan.",
+      "Manual, Photo, and a fully read-only Pro tier for leagues and federations — annual, organization-wide.",
   },
 };
 
 const BILLING_FAQS = FAQ_ITEMS.filter((item) =>
-  ["billed", "leagues, federations"].some((needle) => item.answer.includes(needle) || item.question.includes(needle))
+  ["Manual, Photo, and Pro", "leagues, federations"].some(
+    (needle) => item.answer.includes(needle) || item.question.includes(needle)
+  )
 );
 
 export default function PricingPage() {
@@ -29,19 +31,19 @@ export default function PricingPage() {
           Pricing
         </p>
         <h1 className="mt-3 max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Pay for what actually costs us money.
+          One subscription for your whole club.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground-muted">
-          Play-by-play import is parsed locally and free on every plan. Photo
-          upload uses AI, so it&apos;s billed separately, in tiers that scale with
-          how much you actually scan.
+          Three annual, organization-wide plans — enter your own data on
+          Manual or Photo, or go fully hands-off on Pro and let us do the
+          data work for your league.
         </p>
       </Section>
 
       <PricingTable full />
 
       <Section>
-        <SectionHeading eyebrow="Billing FAQ" title="Pricing questions" />
+        <SectionHeading eyebrow="Pricing FAQ" title="Pricing questions" />
         <div className="mt-8">
           <FaqAccordion items={BILLING_FAQS} />
         </div>

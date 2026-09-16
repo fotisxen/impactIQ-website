@@ -6,11 +6,12 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 export const metadata: Metadata = {
   title: "Platforms",
   description:
-    "Impact IQ is available today as a Windows and macOS desktop app. iOS and Android are on the way — scan the QR code for early access.",
+    "Impact IQ is available today as a Windows and macOS desktop app. A real player companion app is in TestFlight and Play Store internal testing.",
   alternates: { canonical: "/platforms" },
   openGraph: {
     title: "Platforms | Impact IQ",
-    description: "Available today on Windows and macOS desktop. iOS and Android are on the way.",
+    description:
+      "Available today on Windows and macOS desktop. A real player companion app is in testing.",
   },
 };
 
@@ -22,11 +23,12 @@ export default function PlatformsPage() {
           Platforms
         </p>
         <h1 className="mt-3 max-w-2xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          One platform live. Two more almost here.
+          The analytics engine on desktop. Reports in every player&apos;s pocket.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground-muted">
-          Desktop carries the full analytics engine today. Mobile is next —
-          scan below for early access.
+          Desktop runs the full analytics engine today. The companion mobile
+          app is a different, narrower thing — built for players, not coaches
+          — and it&apos;s already real, in testing now.
         </p>
       </Section>
 
@@ -34,7 +36,7 @@ export default function PlatformsPage() {
 
       <CtaBanner
         title="Ready on desktop right now."
-        description="Get the full analytics engine today on Windows or macOS — mobile will carry the same standard when it ships."
+        description="Get the full analytics engine today on Windows or macOS, and publish your first scouting report straight to your roster's phones."
       />
     </>
   );
