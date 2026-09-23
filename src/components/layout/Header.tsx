@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/layout/Logo";
 import { NAV_LINKS, SITE_NAME } from "@/lib/content/site";
 
 export function Header() {
@@ -13,13 +14,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-accent-amber font-mono text-sm font-bold text-surface-inverted">
-            IQ
-          </span>
-          <span className="text-base font-semibold tracking-tight text-foreground">
-            {SITE_NAME}
-          </span>
+        <Link href="/" aria-label={SITE_NAME} onClick={() => setOpen(false)}>
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

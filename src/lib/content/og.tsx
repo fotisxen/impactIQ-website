@@ -1,5 +1,11 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { SITE_NAME } from "./site";
+
+const LOGO_DATA_URI = `data:image/png;base64,${readFileSync(
+  path.join(process.cwd(), "public", "logo.png")
+).toString("base64")}`;
 
 export const OG_SIZE = { width: 1200, height: 630 };
 
@@ -14,8 +20,8 @@ export function buildOgImage(eyebrow: string, title: string) {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: "#08090b",
-          color: "#f2f3f1",
+          background: "#09111c",
+          color: "#eef1f6",
           fontFamily: "sans-serif",
         }}
       >
@@ -25,27 +31,13 @@ export function buildOgImage(eyebrow: string, title: string) {
             alignItems: "center",
             gap: 14,
             fontSize: 30,
-            color: "#f2934a",
+            color: "#fe8d19",
             letterSpacing: 2,
             textTransform: "uppercase",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              width: 44,
-              height: 44,
-              borderRadius: 10,
-              background: "#f2934a",
-              color: "#08090b",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 24,
-              fontWeight: 700,
-            }}
-          >
-            IQ
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={LOGO_DATA_URI} width={64} height={64} alt="" style={{ borderRadius: 14 }} />
           {SITE_NAME}
         </div>
         <div
@@ -55,7 +47,7 @@ export function buildOgImage(eyebrow: string, title: string) {
             gap: 20,
           }}
         >
-          <div style={{ display: "flex", fontSize: 28, color: "#3ecfcf", letterSpacing: 1 }}>
+          <div style={{ display: "flex", fontSize: 28, color: "#9db4d6", letterSpacing: 1 }}>
             {eyebrow}
           </div>
           <div

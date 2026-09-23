@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/layout/Logo";
 import { FOOTER_LINKS, SITE_NAME, SITE_TAGLINE } from "@/lib/content/site";
 
 export function Footer() {
@@ -9,14 +10,7 @@ export function Footer() {
     <footer className="border-t border-border">
       <Container className="grid gap-12 py-16 sm:grid-cols-[1.3fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-accent-amber font-mono text-sm font-bold text-surface-inverted">
-              IQ
-            </span>
-            <span className="text-base font-semibold tracking-tight text-foreground">
-              {SITE_NAME}
-            </span>
-          </div>
+          <Logo size={44} />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-foreground-muted">
             {SITE_TAGLINE}
           </p>

@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const AMBER = "#f2934a";
-const CYAN = "#3ecfcf";
+const AMBER = "#fe8d19";
+const CYAN = "#9db4d6";
 const WOOD = "#a9672f";
 const PAINT = "#0f2c40";
 const LINE = "#f5f1e8";
