@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { StatPanel } from "@/components/illustrations/StatPanel";
+import { HeroStage } from "@/components/sections/HeroStage";
 
 export function Hero() {
   return (
@@ -48,9 +49,9 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex justify-center lg:justify-end">
+        <HeroStage>
           <StatPanel />
-        </div>
+        </HeroStage>
       </Container>
     </section>
   );
