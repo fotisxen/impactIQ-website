@@ -34,7 +34,7 @@ export function Differentiators() {
       <SectionHeading
         eyebrow="The difference"
         title="Analysis nobody else in basketball provides."
-        description="Every other tool in this space stops at basic stats or fakes the advanced ones. Impact IQ was built to actually go deep."
+        description="Every other tool in this space stops at basic stats or fakes the advanced ones. HoopStruct was built to actually go deep."
       />
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

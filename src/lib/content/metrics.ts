@@ -23,7 +23,7 @@ export const CORE_METRICS: Metric[] = [
   {
     code: "IS",
     name: "Impact Score",
-    description: "A from-scratch, BPM-style composite built specifically for Impact IQ's data.",
+    description: "A from-scratch, BPM-style composite built specifically for HoopStruct's data.",
   },
   {
     code: "DOE",

@@ -2,7 +2,7 @@ import { buildOgImage, OG_SIZE } from "@/lib/content/og";
 
 export const size = OG_SIZE;
 export const contentType = "image/png";
-export const alt = "Impact IQ — basketball analytics nobody else provides";
+export const alt = "HoopStruct — basketball analytics nobody else provides";
 
 export default function Image() {
   return buildOgImage(

@@ -72,7 +72,7 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
       {full ? (
         <p className="mt-6 text-sm text-foreground-muted">
           Manual entry is always there too, as a baseline. The principle
-          holds across all three: the more data you give Impact IQ, the
+          holds across all three: the more data you give HoopStruct, the
           deeper it can go — a manually-typed line gets the standard box
           score and headline metrics, and play-by-play is what unlocks real
           plus/minus and the Impact Rating.

@@ -12,12 +12,12 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 export const metadata: Metadata = {
   title: "Product",
   description:
-    "How Impact IQ turns a photo or a play-by-play export into real basketball analytics — advanced stats for player evaluation, high-quality scouting reports for games, Shot Chart Entry, and purpose-built charts nobody else in this space provides.",
+    "How HoopStruct turns a photo or a play-by-play export into real basketball analytics — advanced stats for player evaluation, high-quality scouting reports for games, Shot Chart Entry, and purpose-built charts nobody else in this space provides.",
   alternates: { canonical: "/product" },
   openGraph: {
-    title: "Product | Impact IQ",
+    title: "Product | HoopStruct",
     description:
-      "How Impact IQ turns a photo or a play-by-play export into real basketball analytics.",
+      "How HoopStruct turns a photo or a play-by-play export into real basketball analytics.",
   },
 };
 
@@ -29,7 +29,7 @@ export default function ProductPage() {
           Product
         </p>
         <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Everything Impact IQ computes — and why nobody else computes it this deeply.
+          Everything HoopStruct computes — and why nobody else computes it this deeply.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground-muted">
           Two pillars: advanced stats built for evaluating players, and
@@ -52,7 +52,7 @@ export default function ProductPage() {
             <div>
               <h3 className="text-lg font-semibold text-foreground">Shot Chart Entry</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
-                Click anywhere on a realistic half-court diagram and Impact IQ
+                Click anywhere on a realistic half-court diagram and HoopStruct
                 silently classifies the zone — at-rim, mid-range, corner
                 three, wing three, top-of-key three — then you type makes and
                 attempts for a player or the whole team. No shot-tracking

@@ -7,11 +7,11 @@ import { FAQ_ITEMS } from "@/lib/content/faq";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers to common questions about Impact IQ — photo upload vs play-by-play import, advanced stats, pricing, data handling, and mobile availability.",
+    "Answers to common questions about HoopStruct — photo upload vs play-by-play import, advanced stats, pricing, data handling, and mobile availability.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ | Impact IQ",
-    description: "Answers to common questions about Impact IQ.",
+    title: "FAQ | HoopStruct",
+    description: "Answers to common questions about HoopStruct.",
   },
 };
 

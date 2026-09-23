@@ -15,7 +15,7 @@ export async function Platforms({ full = false }: { full?: boolean }) {
     <Section id="platforms">
       <SectionHeading
         eyebrow="Platforms"
-        title="Get Impact IQ."
+        title="Get HoopStruct."
         description="Desktop runs the full analytics engine, live today. A real player companion app is in testing — scan below to join."
       />
 

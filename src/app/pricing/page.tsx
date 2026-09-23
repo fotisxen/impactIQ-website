@@ -8,10 +8,10 @@ import { FAQ_ITEMS } from "@/lib/content/faq";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Impact IQ pricing: Manual (€200/year) and Photo (€500/year) self-serve plans, plus a fully read-only Pro tier (€4,000/year) for leagues and federations. Annual, organization-wide, no per-seat billing.",
+    "HoopStruct pricing: Manual (€200/year) and Photo (€500/year) self-serve plans, plus a fully read-only Pro tier (€4,000/year) for leagues and federations. Annual, organization-wide, no per-seat billing.",
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Pricing | Impact IQ",
+    title: "Pricing | HoopStruct",
     description:
       "Manual, Photo, and a fully read-only Pro tier for leagues and federations — annual, organization-wide.",
   },

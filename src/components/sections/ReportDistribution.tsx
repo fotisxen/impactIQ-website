@@ -25,7 +25,7 @@ export function ReportDistribution() {
       <SectionHeading
         eyebrow="Built for players too"
         title="From your desk to every player's pocket."
-        description="The first part of Impact IQ built for a player to use directly — not just a coach or analyst."
+        description="The first part of HoopStruct built for a player to use directly — not just a coach or analyst."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">

@@ -1,10 +1,10 @@
-# Impact IQ — Marketing Website Brief
+# HoopStruct — Marketing Website Brief
 
-This is a **separate project** from the desktop app (`boxscore-app`, an Electron + Angular app, lives in a sibling folder). This repo is a standalone Next.js marketing/SEO website for the same product, branded **Impact IQ**.
+This is a **separate project** from the desktop app (`boxscore-app`, an Electron + Angular app, lives in a sibling folder). This repo is a standalone Next.js marketing/SEO website for the same product, branded **HoopStruct**.
 
 ## What the product actually is (source of truth — don't invent features)
 
-Impact IQ is a desktop app (Electron, built and working) that turns basketball box scores into real analytics. It has three ways to get data in, all already built and working — *updated 2026-08-19 from an app-side changelog handed to this session*:
+HoopStruct is a desktop app (Electron, built and working) that turns basketball box scores into real analytics. It has three ways to get data in, all already built and working — *updated 2026-08-19 from an app-side changelog handed to this session*:
 
 1. **Upload a photo** of a printed/screenshotted box score — Claude AI (Anthropic) reads it via OCR and extracts a full stat line for both teams. Costs the business real API money per upload, so it's the metered/paid part of the product.
 2. **Manual entry** — typing a box score line in by hand. The baseline fallback; gets the standard box score and headline metrics, nothing tier-locked behind it.
@@ -46,9 +46,9 @@ Current live pricing in the app (Stripe, real, working) — every tier is a whol
 
 - **Manual — €200/year**: manual box-score entry only (no OCR/photo upload offered at all on this tier, not even paywalled-and-visible).
 - **Photo — €500/year**: everything in Manual, plus AI photo-upload box-score extraction, **unlimited** — not metered/capped.
-- **Pro — €4,000/year**: fully **read-only** — a club/organization on this tier never enters its own data; instead it sees the games the Impact IQ team itself uploads and analyzes for that league, kept fully up to date. Pitched as "let us do the data work — your whole staff gets full Dashboard/Four Factors/Scouting-report access to professionally maintained league data, with nothing to enter yourselves." This is the site's clearest B2B/league-integration hook — worth its own explicit callout, not just a pricing-table row.
+- **Pro — €4,000/year**: fully **read-only** — a club/organization on this tier never enters its own data; instead it sees the games the HoopStruct team itself uploads and analyzes for that league, kept fully up to date. Pitched as "let us do the data work — your whole staff gets full Dashboard/Four Factors/Scouting-report access to professionally maintained league data, with nothing to enter yourselves." This is the site's clearest B2B/league-integration hook — worth its own explicit callout, not just a pricing-table row.
 
-Manual and Photo also both now include **Shot Chart Entry** (see feature list below) — Pro does not, since Pro is read-only by design (whatever data exists comes from Impact IQ's own uploads, not the client).
+Manual and Photo also both now include **Shot Chart Entry** (see feature list below) — Pro does not, since Pro is read-only by design (whatever data exists comes from HoopStruct's own uploads, not the client).
 
 **Build the pricing section as a self-contained, easily-editable component** (a single data array/config) so amounts/copy can be adjusted without restructuring the page — this guidance still holds even though the model question itself is now settled.
 
@@ -111,7 +111,7 @@ The honest positioning was: "We give you data you can actually trust, and tell y
 
 This brief was generated from a conversation in a different Claude Code session (working on `boxscore-app`, the actual product). The user asked for this to be a fresh project + fresh chat specifically so this website work doesn't inherit that session's long history. If something here is ambiguous, ask — don't guess at product facts that aren't in this document.
 
-**2026-08-19 update**: the user pasted a second document from the app-side session — "Impact IQ — App Changes Since Last Website Update" — summarizing everything added/changed in the app since this brief was written (three data-entry paths, full metric taxonomy, the Four Factors page, RAPM confidence levels, new charts, named cup competitions, the coach-facing point-in-season export). All of it has been folded into this document and the site content.
+**2026-08-19 update**: the user pasted a second document from the app-side session — "HoopStruct — App Changes Since Last Website Update" — summarizing everything added/changed in the app since this brief was written (three data-entry paths, full metric taxonomy, the Four Factors page, RAPM confidence levels, new charts, named cup competitions, the coach-facing point-in-season export). All of it has been folded into this document and the site content.
 
 **2026-09-16 update**: the app's entire backend moved from local-only SQLite to a real shared Supabase/Postgres backend this cycle — the change isn't a website-facing feature by itself, but it's *why* several website-facing facts changed at once: (1) the pricing/business model finally has a real answer — org-pooled Manual/Photo tiers plus a read-only Pro tier aimed at leagues/clubs who want their data handled for them, replacing the old per-user Individual/Team model outright (see Pricing); (2) Desktop now genuinely ships for macOS as well as Windows, not Windows-only; (3) a real (if not yet public-store) mobile app exists — not a desktop-app port, but a narrow player-facing report viewer, tied to a new "publish a scouting report to the roster" feature on desktop; (4) Shot Chart Entry — manual shot-location logging on a realistic court diagram — shipped as a Manual/Photo-tier feature.
 

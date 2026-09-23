@@ -49,7 +49,7 @@ export function PricingTable({ full = false }: { full?: boolean }) {
               ))}
             </ul>
             <Button
-              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Getting started with Impact IQ — ${plan.name}`)}`}
+              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Getting started with HoopStruct — ${plan.name}`)}`}
               variant={plan.highlighted ? "primary" : "secondary"}
               className="mt-7 w-full"
             >
@@ -70,7 +70,7 @@ export function PricingTable({ full = false }: { full?: boolean }) {
             </h3>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground-muted">
               Pro is the tier for organizations that don&apos;t want to enter
-              a single stat themselves. Impact IQ uploads and analyzes your
+              a single stat themselves. HoopStruct uploads and analyzes your
               league&apos;s games directly, and every club or team under your
               federation gets full Dashboard, Four Factors, and scouting-report
               access to professionally maintained data — kept current, game

@@ -52,7 +52,7 @@ export const CORE_PLANS: PricingPlan[] = [
     readOnly: true,
     features: [
       "No data entry, ever — nothing to upload yourself",
-      "Impact IQ uploads and analyzes every game in your league",
+      "HoopStruct uploads and analyzes every game in your league",
       "Full Dashboard, Four Factors, and scouting-report access",
       "Kept fully up to date, game by game",
       "Built for leagues, federations, and large clubs",

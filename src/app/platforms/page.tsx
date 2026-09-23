@@ -6,10 +6,10 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 export const metadata: Metadata = {
   title: "Platforms",
   description:
-    "Impact IQ is available today as a Windows and macOS desktop app. A real player companion app is in TestFlight and Play Store internal testing.",
+    "HoopStruct is available today as a Windows and macOS desktop app. A real player companion app is in TestFlight and Play Store internal testing.",
   alternates: { canonical: "/platforms" },
   openGraph: {
-    title: "Platforms | Impact IQ",
+    title: "Platforms | HoopStruct",
     description:
       "Available today on Windows and macOS desktop. A real player companion app is in testing.",
   },

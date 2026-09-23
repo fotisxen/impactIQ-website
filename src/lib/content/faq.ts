@@ -10,12 +10,12 @@ export const FAQ_ITEMS: FaqItem[] = [
       "Both produce a full box score, but they're not equal. Photo upload reads a printed or screenshotted box score with AI OCR — fast, and works from almost anything. Play-by-play import parses a EuroLeague-style Excel export locally, at zero API cost, and is more accurate: exact free-throw splits, exact shot types, fouls drawn, and — the real differentiator — measured minutes and plus/minus reconstructed from substitution timestamps and score deltas, not estimates.",
   },
   {
-    question: "What makes Impact IQ's analysis different from every other basketball app?",
+    question: "What makes HoopStruct's analysis different from every other basketball app?",
     answer:
-      "Depth nobody else in this space matches. AI handles the tedious part — reading a photo of a box score in seconds. Real statistics handle the rest: a from-scratch RAPM-style Impact Rating, plus/minus reconstructed from actual substitution timestamps, PIR/PER/PIE, Four Factors, and scouting-report insights generated the moment a game ends. Most apps stop at points and rebounds — Impact IQ goes as deep as a professional analytics team.",
+      "Depth nobody else in this space matches. AI handles the tedious part — reading a photo of a box score in seconds. Real statistics handle the rest: a from-scratch RAPM-style Impact Rating, plus/minus reconstructed from actual substitution timestamps, PIR/PER/PIE, Four Factors, and scouting-report insights generated the moment a game ends. Most apps stop at points and rebounds — HoopStruct goes as deep as a professional analytics team.",
   },
   {
-    question: "Does Impact IQ use AI?",
+    question: "Does HoopStruct use AI?",
     answer:
       "Yes — AI reads your box score photos so you never type a stat line by hand, a capability nobody else offers at this level. From there, the analytics engine takes over: the same statistical techniques real basketball analytics teams use, applied to every game, every player, automatically.",
   },
@@ -37,7 +37,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How do players see their scouting reports?",
     answer:
-      "A coach publishes a finished scouting report as a PDF straight from the desktop app to the whole roster. Each player opens the companion mobile app and always sees exactly the current report — never a stale one, never next week's game early. The coach gets a simple view back in the desktop app showing who's actually opened it. It's the first part of Impact IQ built for a player to use directly, not just a coach or analyst.",
+      "A coach publishes a finished scouting report as a PDF straight from the desktop app to the whole roster. Each player opens the companion mobile app and always sees exactly the current report — never a stale one, never next week's game early. The coach gets a simple view back in the desktop app showing who's actually opened it. It's the first part of HoopStruct built for a player to use directly, not just a coach or analyst.",
   },
   {
     question: "Is there an iOS or Android app?",
@@ -52,7 +52,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What's the difference between the Manual, Photo, and Pro plans?",
     answer:
-      "All three are annual, organization-wide subscriptions — one price per club or league, shared by every coach on staff. Manual (€200/year) is entry-only, no AI upload at all. Photo (€500/year) adds unlimited AI photo-upload box-score extraction plus play-by-play import. Pro (€4,000/year) is fully read-only: you never enter data yourselves — Impact IQ uploads and analyzes your league's games directly, and your whole organization gets full analytics access to it.",
+      "All three are annual, organization-wide subscriptions — one price per club or league, shared by every coach on staff. Manual (€200/year) is entry-only, no AI upload at all. Photo (€500/year) adds unlimited AI photo-upload box-score extraction plus play-by-play import. Pro (€4,000/year) is fully read-only: you never enter data yourselves — HoopStruct uploads and analyzes your league's games directly, and your whole organization gets full analytics access to it.",
   },
   {
     question: "Can I export my data?",
@@ -62,6 +62,6 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Do you offer plans for leagues, federations, or large clubs?",
     answer:
-      "Yes — that's exactly what the Pro plan (€4,000/year) is. It's fully read-only: your organization never enters a stat itself. Impact IQ uploads and analyzes every game in your league directly, and everyone on your staff gets full Dashboard, Four Factors, and scouting-report access to professionally maintained data, kept current game by game.",
+      "Yes — that's exactly what the Pro plan (€4,000/year) is. It's fully read-only: your organization never enters a stat itself. HoopStruct uploads and analyzes every game in your league directly, and everyone on your staff gets full Dashboard, Four Factors, and scouting-report access to professionally maintained data, kept current game by game.",
   },
 ];
