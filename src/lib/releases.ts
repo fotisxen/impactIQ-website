@@ -1,10 +1,10 @@
 // Fetches the latest Windows/macOS installer links straight from GitHub
-// Releases on the app repo — no token needed (public unauthenticated
+// Releases on the app repo, no token needed (public unauthenticated
 // requests are rate-limited but plenty for a once-an-hour cached fetch).
 // Returns null fields until a real release has actually been tagged
 // (`git tag v0.1.0 && git push origin v0.1.0` in the app repo, which the
 // repo's own GitHub Actions workflow turns into a published release with
-// these assets attached) — callers must render a "coming soon" state for
+// these assets attached), callers must render a "coming soon" state for
 // that case rather than assume a link always exists.
 
 const RELEASES_API_URL =
@@ -48,7 +48,7 @@ export async function getLatestRelease(): Promise<LatestRelease | null> {
       next: { revalidate: 3600 },
     });
   } catch {
-    return null; // offline at build time, GitHub down, etc. — fail soft
+    return null; // offline at build time, GitHub down, etc., fail soft
   }
   if (!res.ok) return null; // 404 = no releases published yet
 

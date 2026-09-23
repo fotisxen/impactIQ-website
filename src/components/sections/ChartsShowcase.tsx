@@ -32,7 +32,7 @@ const CHARTS = [
   {
     Icon: BumpChartIcon,
     name: "Bump chart",
-    use: "How rankings — scoring, efficiency, standings — shift and cross over time.",
+    use: "How rankings (scoring, efficiency, standings) shift and cross over time.",
   },
   {
     Icon: GravityMapIcon,

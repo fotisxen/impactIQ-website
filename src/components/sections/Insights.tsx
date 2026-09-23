@@ -36,7 +36,7 @@ export function Insights({ full = false }: { full?: boolean }) {
       <SectionHeading
         eyebrow="Insights nobody else generates"
         title="Scouting reports, written instantly for every game, team, and player."
-        description="The kind of breakdown a scout would spend hours building — real comparisons against real season averages, ready the moment a game ends."
+        description="The kind of breakdown a scout would spend hours building: real comparisons against real season averages, ready the moment a game ends."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -68,8 +68,8 @@ export function Insights({ full = false }: { full?: boolean }) {
             </div>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground-muted">
               Team scouting reports compare a team&apos;s own numbers in losses
-              versus wins — turns it over more, gets outrebounded, allows more
-              points, whatever the real pattern is — so an opposing coach
+              versus wins (turns it over more, gets outrebounded, allows more
+              points, whatever the real pattern is), so an opposing coach
               knows exactly what to force.
             </p>
           </div>

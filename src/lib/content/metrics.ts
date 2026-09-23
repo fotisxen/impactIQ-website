@@ -18,7 +18,7 @@ export const CORE_METRICS: Metric[] = [
   {
     code: "PIE",
     name: "Player Impact Estimate",
-    description: "NBA's real formula — a player's share of everything that happened on court.",
+    description: "NBA's real formula: a player's share of everything that happened on court.",
   },
   {
     code: "IS",
@@ -33,7 +33,7 @@ export const CORE_METRICS: Metric[] = [
   {
     code: "NET",
     name: "Net Rating",
-    description: "Exact ORtg minus DRtg — for players, built from real +/- when play-by-play exists.",
+    description: "Exact ORtg minus DRtg, for players, built from real +/- when play-by-play exists.",
   },
   {
     code: "USG%",
@@ -43,7 +43,7 @@ export const CORE_METRICS: Metric[] = [
   {
     code: "RAPM",
     name: "Impact Rating",
-    description: "A real, from-scratch adjusted plus-minus — box score plus lineup data, the same technique behind LEBRON and EPM.",
+    description: "A real, from-scratch adjusted plus-minus: box score plus lineup data, the same technique behind LEBRON and EPM.",
   },
 ];
 
@@ -52,7 +52,7 @@ export type MetricCategory = {
   metrics: string[];
 };
 
-// The full taxonomy beyond the headline eight — every one derived and
+// The full taxonomy beyond the headline eight, every one derived and
 // documented, not a token handful. Shown as a supporting strip, not
 // individually explained, since there are simply too many to caption.
 export const METRIC_CATEGORIES: MetricCategory[] = [

@@ -8,11 +8,11 @@ import { FAQ_ITEMS } from "@/lib/content/faq";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with HoopStruct — email us or request a call for pricing, club/league integration, or general questions.",
+    "Get in touch with HoopStruct: email us or request a call for pricing, club/league integration, or general questions.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | HoopStruct",
-    description: "Get in touch — email us or request a call.",
+    description: "Get in touch: email us or request a call.",
   },
 };
 

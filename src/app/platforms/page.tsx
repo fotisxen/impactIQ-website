@@ -27,8 +27,7 @@ export default function PlatformsPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground-muted">
           Desktop runs the full analytics engine today. The companion mobile
-          app is a different, narrower thing — built for players, not coaches
-          — and it&apos;s already real, in testing now.
+          app is a different, narrower thing, built for players, not coaches, and it&apos;s already real, in testing now.
         </p>
       </Section>
 

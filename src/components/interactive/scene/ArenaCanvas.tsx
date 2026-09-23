@@ -32,7 +32,7 @@ const SUPPORT_POLE_Z = BASELINE_Z - 1.8; // behind the baseline, clear of the ke
 
 // Three-point line = an arc around the rim for the middle portion, then two
 // straight "corner" segments running parallel to the sidelines down to the
-// baseline — same two-piece shape a real court uses. The arc radius is
+// baseline, same two-piece shape a real court uses. The arc radius is
 // picked so its apex clears the free-throw circle by a real margin (real
 // courts never have the arc brushing the top of the key), and the sweep
 // angle is solved so the arc's ends land just inside the sidelines rather
@@ -165,7 +165,7 @@ function createWoodTexture(): THREE.CanvasTexture | null {
 }
 
 // Points for the three-point arc, swept around the rim and clamped so it
-// never crosses the sidelines — computed once, not re-derived per frame.
+// never crosses the sidelines, computed once, not re-derived per frame.
 function threePointArcPoints() {
   const segments = 28;
   const points: THREE.Vector3[] = [];
@@ -228,7 +228,7 @@ function Court() {
         <meshStandardMaterial color={LINE} roughness={0.5} />
       </mesh>
 
-      {/* key / paint — anchored to the baseline, extending to the free-throw line */}
+      {/* key / paint, anchored to the baseline, extending to the free-throw line */}
       <mesh position={[0, 0.02, KEY_CENTER_Z]} receiveShadow>
         <boxGeometry args={[KEY_WIDTH, 0.05, KEY_LENGTH]} />
         <meshStandardMaterial color={PAINT} roughness={0.65} />
@@ -236,7 +236,7 @@ function Court() {
 
       {/* key outline: left + right sides and the free-throw-line edge.
           The baseline edge is already drawn by the baseline line mesh above.
-          Built from thin boxes, not a wireframe box — a wireframe BoxGeometry
+          Built from thin boxes, not a wireframe box: a wireframe BoxGeometry
           draws its faces' triangle diagonals too, which showed up as a stray
           line/triangle cutting across the paint. */}
       <mesh position={[-KEY_WIDTH / 2, 0.05, KEY_CENTER_Z]} castShadow receiveShadow>

@@ -16,7 +16,7 @@ export function AdvancedStats({ full = false }: { full?: boolean }) {
       <SectionHeading
         eyebrow="Advanced stats, unmatched"
         title="The analytics stack nobody else in this space provides."
-        description="PIR, PER, PIE, a from-scratch Impact Score, the Four Factors, and a real RAPM-style Impact Rating — the same formulas real analytics teams use, computed individually and at team level, every game, benchmarked against the league."
+        description="PIR, PER, PIE, a from-scratch Impact Score, the Four Factors, and a real RAPM-style Impact Rating. These are the same formulas real analytics teams use, computed individually and at team level, every game, benchmarked against the league."
       />
 
       <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -37,7 +37,7 @@ export function AdvancedStats({ full = false }: { full?: boolean }) {
       {full ? (
         <div className="mt-6 rounded-xl border border-border bg-background-raised p-6 sm:p-7">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-foreground-muted">
-            Plus the full taxonomy — not a token few stats
+            Plus the full taxonomy, not a token few stats
           </p>
           <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {METRIC_CATEGORIES.map((category) => (
@@ -60,7 +60,7 @@ export function AdvancedStats({ full = false }: { full?: boolean }) {
             Four Factors, weighted the way they actually predict winning
           </p>
           <p className="mt-1.5 text-sm text-foreground-muted">
-            Each combo score blends the core factor with real sub-metrics — Assisted FG%, live-ball
+            Each combo score blends the core factor with real sub-metrics such as Assisted FG%, live-ball
             turnover rate, opponent OREB%, and more.
           </p>
           <div className="mt-5 flex flex-col gap-3">
@@ -89,8 +89,8 @@ export function AdvancedStats({ full = false }: { full?: boolean }) {
             One real Impact Rating. Not two borrowed ones.
           </h3>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground-muted">
-            Built from actual play-by-play lineup data — the same core
-            technique behind LEBRON and EPM — reconstructed straight from
+            Built from actual play-by-play lineup data (the same core
+            technique behind LEBRON and EPM), reconstructed straight from
             your play-by-play import. It ships with a visible confidence
             level ({IMPACT_RATING_CONFIDENCE_LEVELS.join(" → ")}) based on
             how many games actually back the number, instead of two

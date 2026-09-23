@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 
 export function CtaBanner({
   title = "See your team's real numbers.",
-  description = "Start with a photo, or import play-by-play for the full analytics engine — real plus/minus, RAPM, and scouting insights included.",
+  description = "Start with a photo, or import play-by-play for the full analytics engine: real plus/minus, RAPM, and scouting insights included.",
   primaryHref = "/pricing",
   primaryLabel = "View pricing",
   secondaryHref = "/product",

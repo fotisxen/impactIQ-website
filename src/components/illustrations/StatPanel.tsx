@@ -15,7 +15,7 @@ export function StatPanel() {
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground-muted">
             Game report
           </p>
-          <p className="mt-1 text-sm font-semibold text-foreground">Home 78 — 71 Away</p>
+          <p className="mt-1 text-sm font-semibold text-foreground">Home 78-71 Away</p>
         </div>
         <span className="inline-flex items-center rounded-full border border-accent-cyan/40 bg-accent-cyan/10 px-2 py-1 font-mono text-[10px] font-semibold text-accent-cyan">
           PLAY-BY-PLAY
@@ -45,7 +45,7 @@ export function StatPanel() {
             Impact Rating
           </p>
           <p className="mt-1 font-mono text-2xl font-semibold text-foreground">+9.4</p>
-          <p className="mt-0.5 text-[11px] text-foreground-muted">Top tier — league-wide</p>
+          <p className="mt-0.5 text-[11px] text-foreground-muted">Top tier, league-wide</p>
         </div>
         <div className="h-16 w-16 text-accent-amber">
           <RadarChartIcon />

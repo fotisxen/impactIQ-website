@@ -10,7 +10,7 @@ export function PricingTable({ full = false }: { full?: boolean }) {
       <SectionHeading
         eyebrow="Pricing"
         title="Three plans. Your whole organization, one subscription."
-        description="Manual and Photo are self-serve — enter your own data, or let AI read it for you. Pro is fully hands-off: we do the data work for your entire league."
+        description="Manual and Photo are self-serve: enter your own data, or let AI read it for you. Pro is fully hands-off: we do the data work for your entire league."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -49,7 +49,7 @@ export function PricingTable({ full = false }: { full?: boolean }) {
               ))}
             </ul>
             <Button
-              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Getting started with HoopStruct — ${plan.name}`)}`}
+              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Getting started with HoopStruct: ${plan.name}`)}`}
               variant={plan.highlighted ? "primary" : "secondary"}
               className="mt-7 w-full"
             >
@@ -73,7 +73,7 @@ export function PricingTable({ full = false }: { full?: boolean }) {
               a single stat themselves. HoopStruct uploads and analyzes your
               league&apos;s games directly, and every club or team under your
               federation gets full Dashboard, Four Factors, and scouting-report
-              access to professionally maintained data — kept current, game
+              access to professionally maintained data, kept current, game
               by game, with nothing for your staff to do but read it.
             </p>
           </div>

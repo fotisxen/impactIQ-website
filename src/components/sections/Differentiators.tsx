@@ -6,7 +6,7 @@ const ITEMS = [
     icon: Sparkles,
     name: "AI-powered capture",
     description:
-      "Snap a photo of a box score and AI extracts the full stat line in seconds — nobody else in this space does that from a phone photo.",
+      "Snap a photo of a box score and AI extracts the full stat line in seconds. Nobody else in this space does that from a phone photo.",
   },
   {
     icon: Activity,
@@ -18,13 +18,13 @@ const ITEMS = [
     icon: Gauge,
     name: "RAPM-style Impact Rating",
     description:
-      "Built from scratch with the same technique behind modern industry metrics like LEBRON and EPM — with a visible confidence level, not a black-box number.",
+      "Built from scratch with the same technique behind modern industry metrics like LEBRON and EPM, with a visible confidence level, not a black-box number.",
   },
   {
     icon: ClipboardList,
     name: "Instant scouting reports",
     description:
-      "Full scouting breakdowns for any game, team, or player — generated the moment a game ends, no analyst required.",
+      "Full scouting breakdowns for any game, team, or player, generated the moment a game ends, no analyst required.",
   },
 ];
 

@@ -4,12 +4,12 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 const PHOTO_POINTS = [
   "Upload a photo of a printed or screenshotted box score",
   "Claude AI reads it via OCR and extracts a full stat line for both teams",
-  "Fast — works from almost any box score you can point a camera at",
+  "Fast: works from almost any box score you can point a camera at",
 ];
 
 const PBP_POINTS = [
   "Import a EuroLeague-style play-by-play Excel export",
-  "Parsed locally — zero API cost, unlimited on the Photo plan",
+  "Parsed locally: zero API cost, unlimited on the Photo plan",
   "Exact free-throw splits, exact shot types, fouls drawn, shots rejected",
   "Real, measured minutes and plus/minus, reconstructed from substitution timestamps and score deltas",
 ];
@@ -28,7 +28,7 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
           <Camera className="h-7 w-7 text-accent-amber" strokeWidth={1.5} />
           <h3 className="mt-4 text-xl font-semibold text-foreground">Photo upload</h3>
           <p className="mt-1 text-sm text-foreground-muted">
-            The easy, AI-powered path — unlimited on the Photo plan.
+            The easy, AI-powered path: unlimited on the Photo plan.
           </p>
           <ul className="mt-5 flex flex-col gap-3">
             {PHOTO_POINTS.map((point) => (
@@ -49,7 +49,7 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
           </div>
           <h3 className="mt-4 text-xl font-semibold text-foreground">Play-by-play import</h3>
           <p className="mt-1 text-sm text-foreground-muted">
-            The differentiator — free, local, and more accurate than either photo or manual entry.
+            The differentiator: free, local, and more accurate than either photo or manual entry.
           </p>
           <ul className="mt-5 flex flex-col gap-3">
             {PBP_POINTS.map((point) => (
@@ -63,7 +63,7 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
             <p className="mt-5 border-t border-border pt-4 text-sm text-foreground-muted">
               As far as we&apos;ve found, no other consumer-facing tool in this
               space reconstructs real minutes and plus/minus from a spreadsheet
-              import — everyone else estimates or leaves it out.
+              import. Everyone else estimates or leaves it out.
             </p>
           ) : null}
         </div>
@@ -73,7 +73,7 @@ export function TwoWaysIn({ full = false }: { full?: boolean }) {
         <p className="mt-6 text-sm text-foreground-muted">
           Manual entry is always there too, as a baseline. The principle
           holds across all three: the more data you give HoopStruct, the
-          deeper it can go — a manually-typed line gets the standard box
+          deeper it can go: a manually-typed line gets the standard box
           score and headline metrics, and play-by-play is what unlocks real
           plus/minus and the Impact Rating.
         </p>

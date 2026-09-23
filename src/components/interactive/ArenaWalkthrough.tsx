@@ -40,7 +40,7 @@ const CARDS: Card[] = [
     corner: "br",
     eyebrow: "Half court",
     title: "Every possession, live.",
-    body: "Shots, fouls, substitutions — timestamped as they happen, not after.",
+    body: "Shots, fouls, substitutions: timestamped as they happen, not after.",
   },
   {
     id: "buzzer",

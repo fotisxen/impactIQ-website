@@ -19,7 +19,7 @@ export function WaitlistForm() {
     return (
       <div className="flex items-center gap-2.5 rounded-md border border-accent-cyan/40 bg-accent-cyan/10 px-4 py-3 text-sm text-accent-cyan">
         <CheckCircle2 className="h-4 w-4 shrink-0" />
-        You&apos;re on the list — we&apos;ll email you once you&apos;re added as a tester.
+        You&apos;re on the list. We&apos;ll email you once you&apos;re added as a tester.
       </div>
     );
   }

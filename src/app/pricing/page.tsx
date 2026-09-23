@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pricing | HoopStruct",
     description:
-      "Manual, Photo, and a fully read-only Pro tier for leagues and federations — annual, organization-wide.",
+      "Manual, Photo, and a fully read-only Pro tier for leagues and federations, billed annually for the whole organization.",
   },
 };
 
@@ -34,7 +34,7 @@ export default function PricingPage() {
           One subscription for your whole club.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground-muted">
-          Three annual, organization-wide plans — enter your own data on
+          Three annual, organization-wide plans: enter your own data on
           Manual or Photo, or go fully hands-off on Pro and let us do the
           data work for your league.
         </p>

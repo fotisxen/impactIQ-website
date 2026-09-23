@@ -16,7 +16,7 @@ export async function Platforms({ full = false }: { full?: boolean }) {
       <SectionHeading
         eyebrow="Platforms"
         title="Get HoopStruct."
-        description="Desktop runs the full analytics engine, live today. A real player companion app is in testing — scan below to join."
+        description="Desktop runs the full analytics engine, live today. A real player companion app is in testing. Scan below to join."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -30,8 +30,8 @@ export async function Platforms({ full = false }: { full?: boolean }) {
           <h3 className="mt-4 text-xl font-semibold text-foreground">Desktop</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
             Built and shipping today for Windows and macOS. The full analytics
-            engine — photo upload, play-by-play import, every advanced stat,
-            chart, and scouting insight — runs here.
+            engine (photo upload, play-by-play import, every advanced stat,
+            chart, and scouting insight) runs here.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             {release?.windows ? (
@@ -62,7 +62,7 @@ export async function Platforms({ full = false }: { full?: boolean }) {
           </div>
           {!hasAnyBuild ? (
             <p className="mt-3 text-xs text-foreground-muted">
-              The installer is being finalized — check back shortly, or use the
+              The installer is being finalized. Check back shortly, or use the
               contact page to ask for early access.
             </p>
           ) : null}
@@ -83,7 +83,7 @@ export async function Platforms({ full = false }: { full?: boolean }) {
           </div>
           <h3 className="mt-4 text-xl font-semibold text-foreground">Player companion app</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
-            Real and working — but a different, narrower app than desktop,
+            Real and working, but a different, narrower app than desktop,
             built for players: it shows exactly your team&apos;s current
             scouting report, published by your coach, and nothing else. No
             dashboard, no data entry. Currently in TestFlight (iOS) and Play

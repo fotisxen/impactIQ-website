@@ -33,7 +33,7 @@ export function Hero() {
             <span className="text-accent-amber">like no one else does.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted">
-            AI reads the box score. Real statistics do the rest — a true
+            AI reads the box score. Real statistics do the rest: a true
             plus/minus, a from-scratch RAPM-style Impact Rating,
             scouting-report insights, and shot-chart-level detail no other
             tool in this space gives you.
