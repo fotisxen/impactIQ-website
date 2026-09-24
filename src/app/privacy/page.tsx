@@ -100,6 +100,13 @@ export default function PrivacyPage() {
             you use photo upload.
           </li>
           <li>
+            <strong className="text-foreground">Google</strong> displays the
+            scouting report PDF inside the Android companion app through its
+            document viewer. It receives a temporary link, valid for about ten
+            minutes, to that single PDF. On iOS the PDF is displayed by the
+            device itself.
+          </li>
+          <li>
             Distribution platforms such as the Microsoft Store, Apple App Store
             and Google Play deliver the apps to you under their own policies.
           </li>
