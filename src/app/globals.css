@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f6f8;
+  --background-raised: #ffffff;
+  --foreground: #09111c;
+  --foreground-muted: #4d586b;
+  --border: #dfe3ea;
+  --border-strong: #c5ccd8;
+
+  --accent-amber: #e8730a;
+  --accent-amber-strong: #c25f06;
+  --accent-cyan: #2a4675;
+  --accent-cyan-strong: #1f3559;
+
+  --surface-inverted: #09111c;
+  --foreground-inverted: #f5f6f8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-raised: var(--background-raised);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-amber-strong: var(--accent-amber-strong);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-cyan-strong: var(--accent-cyan-strong);
+
+  --color-surface-inverted: var(--surface-inverted);
+  --color-foreground-inverted: var(--foreground-inverted);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09111c;
+    --background-raised: #0f1a2b;
+    --foreground: #eef1f6;
+    --foreground-muted: #94a0b4;
+    --border: #1a2638;
+    --border-strong: #2a3a52;
+
+    --accent-amber: #fe8d19;
+    --accent-amber-strong: #ffa347;
+    --accent-cyan: #9db4d6;
+    --accent-cyan-strong: #bcd0ee;
+
+    --surface-inverted: #eef1f6;
+    --foreground-inverted: #09111c;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scroll-reveal (see components/layout/ScrollReveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px) scale(0.985);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
