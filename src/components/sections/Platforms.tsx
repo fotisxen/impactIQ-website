@@ -1,22 +1,36 @@
-import { Monitor, Smartphone, Apple } from "lucide-react";
+import { Monitor, Smartphone } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { WaitlistForm } from "./WaitlistForm";
-import { DownloadQr } from "./DownloadQr";
-import { SITE_URL } from "@/lib/content/site";
-import { getLatestRelease } from "@/lib/releases";
+import { STORE_LINKS } from "@/lib/content/stores";
 
-export async function Platforms({ full = false }: { full?: boolean }) {
-  const release = await getLatestRelease();
-  const hasAnyBuild = !!(release?.windows || release?.mac);
-  const desktopPageUrl = `${SITE_URL}/platforms#desktop`;
+const STORES: { key: keyof typeof STORE_LINKS; label: string }[] = [
+  { key: "microsoft", label: "Microsoft Store" },
+  { key: "macos", label: "Mac App Store" },
+  { key: "ios", label: "App Store" },
+  { key: "android", label: "Google Play" },
+];
 
+function StoreButton({ storeKey }: { storeKey: keyof typeof STORE_LINKS }) {
+  const store = STORES.find((s) => s.key === storeKey)!;
+  const url = STORE_LINKS[storeKey];
+  return url ? (
+    <Button href={url} variant="primary">
+      {store.label}
+    </Button>
+  ) : (
+    <Button href="/platforms" variant="secondary" disabled>
+      {store.label} · Coming soon
+    </Button>
+  );
+}
+
+export function Platforms({ full = false }: { full?: boolean }) {
   return (
     <Section id="platforms">
       <SectionHeading
         eyebrow="Platforms"
         title="Get HoopStruct."
-        description="Desktop runs the full analytics engine, live today. A real player companion app is in testing. Scan below to join."
+        description="Install it from the store you already use. Desktop for coaches and analysts, a companion app for players."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -24,53 +38,24 @@ export async function Platforms({ full = false }: { full?: boolean }) {
           <div className="flex items-center gap-3">
             <Monitor className="h-7 w-7 text-accent-amber" strokeWidth={1.5} />
             <span className="rounded-full border border-accent-amber/40 bg-accent-amber/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-accent-amber">
-              {hasAnyBuild ? `Available now · ${release?.version}` : "Coming very soon"}
+              Windows · macOS
             </span>
           </div>
           <h3 className="mt-4 text-xl font-semibold text-foreground">Desktop</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
-            Built and shipping today for Windows and macOS. The full analytics
-            engine (photo upload, play-by-play import, every advanced stat,
-            chart, and scouting insight) runs here.
+            The full analytics engine (photo upload, play-by-play import, every
+            advanced stat, chart, and scouting insight) runs here. Install it
+            from the Microsoft Store on Windows or the Mac App Store on macOS,
+            and updates arrive automatically.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
-            {release?.windows ? (
-              <Button href={release.windows.url} variant="primary">
-                Download for Windows ({release.windows.sizeMb} MB)
-              </Button>
-            ) : (
-              <Button href={desktopPageUrl} variant="primary" disabled>
-                Download for Windows
-              </Button>
-            )}
-            {release?.mac ? (
-              <Button href={release.mac.url} variant="secondary">
-                <Apple className="mr-1.5 -mt-0.5 inline h-4 w-4" strokeWidth={1.5} />
-                Download for macOS ({release.mac.sizeMb} MB)
-              </Button>
-            ) : (
-              <Button href={desktopPageUrl} variant="secondary" disabled>
-                <Apple className="mr-1.5 -mt-0.5 inline h-4 w-4" strokeWidth={1.5} />
-                Download for macOS
-              </Button>
-            )}
+            <StoreButton storeKey="microsoft" />
+            <StoreButton storeKey="macos" />
             {full ? (
-              <Button href="/pricing" variant="secondary">
+              <Button href="/pricing" variant="ghost">
                 See pricing
               </Button>
             ) : null}
-          </div>
-          {!hasAnyBuild ? (
-            <p className="mt-3 text-xs text-foreground-muted">
-              The installer is being finalized. Check back shortly, or use the
-              contact page to ask for early access.
-            </p>
-          ) : null}
-          <div className="mt-6 border-t border-border pt-6">
-            <DownloadQr
-              url={desktopPageUrl}
-              caption="Scan to open this page on your computer and pick your OS."
-            />
           </div>
         </div>
 
@@ -78,25 +63,18 @@ export async function Platforms({ full = false }: { full?: boolean }) {
           <div className="flex items-center gap-3">
             <Smartphone className="h-7 w-7 text-accent-cyan" strokeWidth={1.5} />
             <span className="rounded-full border border-accent-cyan/40 bg-accent-cyan/10 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-accent-cyan">
-              In testing
+              iOS · Android
             </span>
           </div>
           <h3 className="mt-4 text-xl font-semibold text-foreground">Player companion app</h3>
           <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
-            Real and working, but a different, narrower app than desktop,
-            built for players: it shows exactly your team&apos;s current
-            scouting report, published by your coach, and nothing else. No
-            dashboard, no data entry. Currently in TestFlight (iOS) and Play
-            Store internal testing (Android), not a public store listing yet.
+            A different, narrower app built for players: it shows exactly your
+            team&apos;s current scouting report, published by your coach, and
+            nothing else. No dashboard, no data entry.
           </p>
-          <div className="mt-6 border-t border-border pt-6">
-            <DownloadQr
-              url={`${SITE_URL}/platforms#waitlist`}
-              caption="Scan to join the tester list from your phone."
-            />
-          </div>
-          <div id="waitlist" className="mt-6 scroll-mt-24">
-            <WaitlistForm />
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <StoreButton storeKey="ios" />
+            <StoreButton storeKey="android" />
           </div>
         </div>
       </div>

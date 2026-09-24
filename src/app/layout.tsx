@@ -56,7 +56,7 @@ const jsonLd = {
       "@type": "SoftwareApplication",
       name: SITE_NAME,
       applicationCategory: "SportsApplication",
-      operatingSystem: "Windows, macOS",
+      operatingSystem: "Windows, macOS, iOS, Android",
       description: SITE_DESCRIPTION,
       offers: CORE_PLANS.map((plan) => ({
         "@type": "Offer",

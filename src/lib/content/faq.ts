@@ -42,7 +42,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Is there an iOS or Android app?",
     answer:
-      "Yes, and it's real, but it's a different, narrower app than the desktop one, built specifically for players: it shows a player their team's current scouting report, published by their coach, and nothing else: no dashboard, no data entry. Coaches don't use it themselves; they publish from the desktop app. It's currently in TestFlight (iOS) and Play Store internal testing (Android), not a public store listing yet. Leave your email on the Platforms page and we'll add you as a tester.",
+      "Yes. The companion app for iOS and Android is a different, narrower app than the desktop one, built specifically for players: it shows a player their team's current scouting report, published by their coach, and nothing else: no dashboard, no data entry. Coaches don't use it themselves; they publish from the desktop app. It is distributed through the App Store and Google Play.",
   },
   {
     question: "What happens to my data if I join a team account?",

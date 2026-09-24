@@ -69,8 +69,7 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong className="text-foreground">Website:</strong> if you email
-            us or request a call, we receive the details you send. If you join
-            the mobile tester list, we receive your email address.
+            us or request a call, we receive the details you send.
           </li>
         </ul>
         <p className={P}>
