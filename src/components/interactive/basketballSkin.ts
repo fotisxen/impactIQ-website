@@ -11,17 +11,21 @@ function rand(seed: number) {
   };
 }
 
-// A real basketball has eight panels: two orthogonal great circles plus a
-// looping, tennis-ball-style curve that weaves around them. Seams are built
-// as true 3D curves on the unit sphere and rasterised into the texture, so
-// every crossing lands where it would on a real ball.
-const A = 0.72;
-const B = 1 - A;
-const C = 2 * Math.sqrt(A * B);
+// A real basketball: two great circles that cross at a right angle (the
+// "cross", running edge to edge), plus one smooth round loop around each
+// side pole. Each loop is elongated along the line between the front and
+// back crosses, so it comes close to the cross at BOTH the front and the
+// back (about 16 degrees away), and it bows out toward the ball's edge in
+// between. From the front or the back you see the same "( )" pair beside
+// the cross; from the side you see an arch above and below the horizontal
+// line. That makes eight panels of nearly equal size. The proportions were
+// fitted to photographs of a real ball. Seams are true 3D curves rasterised
+// into the texture.
 
-function tennisCurve(t: number): V3 {
-  return [A * Math.cos(t) + B * Math.cos(3 * t), A * Math.sin(t) - B * Math.sin(3 * t), C * Math.sin(2 * t)];
-}
+// Angular reach of a side loop measured from its pole: toward the front and
+// back crosses (a), and toward the top and bottom (b).
+const LOOP_TOWARD_CROSS = (74 * Math.PI) / 180; // leaves 16 degrees to the cross
+const LOOP_TOWARD_EDGE = (44 * Math.PI) / 180;
 
 function greatCircleXZ(t: number): V3 {
   return [Math.cos(t), 0, Math.sin(t)];
@@ -29,6 +33,17 @@ function greatCircleXZ(t: number): V3 {
 
 function greatCircleYZ(t: number): V3 {
   return [0, Math.cos(t), Math.sin(t)];
+}
+
+// side = +1 for the right-hand loop, -1 for the left-hand one.
+function sideLoop(side: number): (t: number) => V3 {
+  const a = LOOP_TOWARD_CROSS;
+  const b = LOOP_TOWARD_EDGE;
+  return (t) => {
+    // Distance from the pole at angle t: an ellipse in polar form.
+    const r = (a * b) / Math.sqrt(b * b * Math.cos(t) ** 2 + a * a * Math.sin(t) ** 2);
+    return [side * Math.cos(r), Math.sin(r) * Math.sin(t), Math.sin(r) * Math.cos(t)];
+  };
 }
 
 // Rotates the whole seam network so the texture's poles (where an
@@ -44,15 +59,11 @@ function orient(p: V3, ax: number, ay: number): V3 {
   return [x1, y * cx - z1 * sx, y * sx + z1 * cx];
 }
 
-export type SeamLayout = { ax: number; ay: number; axis: "x" | "y" | "z" };
+export type SeamLayout = { ax: number; ay: number };
 
-export const DEFAULT_LAYOUT: SeamLayout = { ax: 0.9, ay: 0.6, axis: "y" };
-
-function permute(p: V3, axis: "x" | "y" | "z"): V3 {
-  if (axis === "z") return p;
-  if (axis === "y") return [p[0], p[2], p[1]];
-  return [p[2], p[1], p[0]];
-}
+// Chosen numerically: every seam stays at least ~22 degrees from the
+// texture's poles, where an equirectangular map pinches lines to nothing.
+export const DEFAULT_LAYOUT: SeamLayout = { ax: 0.4, ay: 4.72 };
 
 export function buildSkin(dark: boolean, layout: SeamLayout = DEFAULT_LAYOUT) {
   const W = 2048;
@@ -95,32 +106,43 @@ export function buildSkin(dark: boolean, layout: SeamLayout = DEFAULT_LAYOUT) {
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
-  const drawCurve = (fn: (t: number) => V3, steps: number) => {
-    let prevX = 0;
-    let started = false;
-    ctx.beginPath();
+  // `span` is how far t runs (a full turn: all four seams are closed loops).
+  const drawCurve = (fn: (t: number) => V3, steps: number, span: number) => {
+    // Unwrap longitude so the polyline is continuous, then stamp it at every
+    // horizontal offset that can land on the canvas. That keeps a seam from
+    // breaking where the texture's left and right edges meet.
+    const xs: number[] = [];
+    const ys: number[] = [];
+    let prev = 0;
+    let turns = 0;
     for (let i = 0; i <= steps; i++) {
-      const p = orient(fn((i / steps) * Math.PI * 2), layout.ax, layout.ay);
+      const p = orient(fn((i / steps) * span), layout.ax, layout.ay);
       const len = Math.hypot(p[0], p[1], p[2]);
-      const x = p[0] / len;
-      const y = p[1] / len;
-      const z = p[2] / len;
-      const theta = Math.acos(Math.max(-1, Math.min(1, y)));
-      let phi = Math.atan2(z, -x);
+      const theta = Math.acos(Math.max(-1, Math.min(1, p[1] / len)));
+      let phi = Math.atan2(p[2] / len, -p[0] / len);
       if (phi < 0) phi += Math.PI * 2;
-      const cx = (phi / (Math.PI * 2)) * W;
-      const cy = (theta / Math.PI) * H;
-      if (!started || Math.abs(cx - prevX) > W / 2) ctx.moveTo(cx, cy);
-      else ctx.lineTo(cx, cy);
-      started = true;
-      prevX = cx;
+      if (i > 0) {
+        if (phi - prev > Math.PI) turns -= 1;
+        else if (prev - phi > Math.PI) turns += 1;
+      }
+      prev = phi;
+      xs.push(((phi + turns * Math.PI * 2) / (Math.PI * 2)) * W);
+      ys.push((theta / Math.PI) * H);
     }
-    ctx.stroke();
+    for (let k = -2; k <= 2; k++) {
+      ctx.beginPath();
+      for (let i = 0; i < xs.length; i++) {
+        if (i === 0) ctx.moveTo(xs[i] + k * W, ys[i]);
+        else ctx.lineTo(xs[i] + k * W, ys[i]);
+      }
+      ctx.stroke();
+    }
   };
 
-  drawCurve(greatCircleXZ, 720);
-  drawCurve(greatCircleYZ, 720);
-  drawCurve((t) => permute(tennisCurve(t), layout.axis), 1200);
+  drawCurve(greatCircleXZ, 720, Math.PI * 2);
+  drawCurve(greatCircleYZ, 720, Math.PI * 2);
+  drawCurve(sideLoop(1), 1440, Math.PI * 2);
+  drawCurve(sideLoop(-1), 1440, Math.PI * 2);
 
   const tex = new THREE.CanvasTexture(canvas);
   tex.colorSpace = dark ? THREE.NoColorSpace : THREE.SRGBColorSpace;

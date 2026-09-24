@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { buildSkin } from "./basketballSkin";
 
+const ORBIT_PERIOD_MS = 16000 / 1.15;
+
 export function OrbitingBall({
   centerRef,
   size = 104,
@@ -67,8 +69,10 @@ export function OrbitingBall({
       const rx = Math.max(size * 0.5, Math.min(wantRx, maxRx));
       const ry = panel.height * 0.24 + size * 0.5;
 
-      // One orbit every 16s; the ellipse is tilted like a planetary orbit.
-      const theta = reduceMotion ? 0.9 : (t / 16000) * Math.PI * 2;
+      // One orbit every ~13.9s (the original 16s, 15% faster); the ellipse is
+      // tilted like a planetary orbit. The ball's own spin is set separately
+      // in `frame` and is deliberately not touched by this speed.
+      const theta = reduceMotion ? 0.9 : (t / ORBIT_PERIOD_MS) * Math.PI * 2;
       const tilt = -0.2;
       const ex = Math.cos(theta) * rx;
       const ey = Math.sin(theta) * ry;
