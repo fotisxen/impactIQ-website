@@ -1,8 +1,9 @@
 export const SITE_NAME = "HoopStruct";
 
-export const SITE_URL = (
+// .origin lowercases the scheme and host, whatever casing the hosting env var was typed in.
+export const SITE_URL = new URL(
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://hoopstruct.example.com"
-).replace(/\/$/, "");
+).origin;
 
 // Placeholder, swap for a real inbox before launch.
 export const CONTACT_EMAIL = "info@opensite.gr";
