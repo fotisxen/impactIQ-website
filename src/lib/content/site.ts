@@ -49,6 +49,7 @@ export const FOOTER_LINKS: { title: string; links: NavLink[] }[] = [
       { href: "/platforms", label: "Platforms" },
       { href: "/faq", label: "FAQ" },
       { href: "/contact", label: "Contact" },
+      { href: "/privacy", label: "Privacy policy" },
     ],
   },
 ];
